@@ -1,0 +1,18 @@
+version: "1"
+services:
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client/src:/app/client/src
+    container_name: manga-website-client-dev
+    command: ["npm", "run", "dev"]
+  server:
+    build: ./server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server/src:/app/server/src
+    container_name: manga-website-client-dev
+    command: ["npm", "run", "dev"]
